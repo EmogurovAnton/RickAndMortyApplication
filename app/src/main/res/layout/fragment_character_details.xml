@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fillViewport="true"
+    tools:context=".presentation.ui.details.CharacterDetailsFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ProgressBar
+            android:id="@+id/characters_details_progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:indeterminateDrawable="@drawable/progress_bar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/character_details_text_no_results"
+            style="@style/ListTextAppearance.Character.Error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/error_to_load_character_details"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
+        <FrameLayout
+            android:id="@+id/frame_layout_image"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:background="@drawable/character_details_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/character_details_image_character"
+                android:layout_width="200dp"
+                android:layout_height="220dp"
+                android:layout_gravity="center" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/character_details_text_location"
+            style="@style/CharacterDetails.TextView.Header"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/location"
+            android:textAppearance="@style/CharacterDetails.TextAppearance.Header"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/frame_layout_image" />
+
+        <TextView
+            android:id="@+id/character_details_text_character_location"
+            style="@style/CharacterDetails.TextAppearance.Content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            app:layout_constraintEnd_toEndOf="@id/character_details_text_location"
+            app:layout_constraintStart_toStartOf="@id/character_details_text_location"
+            app:layout_constraintTop_toBottomOf="@id/character_details_text_location"
+            tools:text="Earth" />
+
+        <TextView
+            android:id="@+id/character_details_text_species"
+            style="@style/CharacterDetails.TextView.Header"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/species"
+            android:textAppearance="@style/CharacterDetails.TextAppearance.Header"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/character_details_text_character_location" />
+
+        <TextView
+            android:id="@+id/character_details_text_character_species"
+            style="@style/CharacterDetails.TextAppearance.Content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            app:layout_constraintEnd_toEndOf="@id/character_details_text_species"
+            app:layout_constraintStart_toStartOf="@id/character_details_text_species"
+            app:layout_constraintTop_toBottomOf="@id/character_details_text_species"
+            tools:text="Human" />
+
+        <TextView
+            android:id="@+id/character_details_text_status"
+            style="@style/CharacterDetails.TextView.Header"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/status"
+            android:textAppearance="@style/CharacterDetails.TextAppearance.Header"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/character_details_text_character_species" />
+
+        <TextView
+            android:id="@+id/character_details_text_character_status"
+            style="@style/CharacterDetails.TextAppearance.Content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            app:layout_constraintEnd_toEndOf="@id/character_details_text_status"
+            app:layout_constraintStart_toStartOf="@id/character_details_text_status"
+            app:layout_constraintTop_toBottomOf="@id/character_details_text_status"
+            tools:text="Alive" />
+
+
+        <Button
+            android:id="@+id/character_details_button_episodes"
+            style="@style/CharacterDetails.Button.ShowEpisodes"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/show_episodes"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/character_details_text_character_status"
+            app:layout_constraintVertical_bias="1" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
