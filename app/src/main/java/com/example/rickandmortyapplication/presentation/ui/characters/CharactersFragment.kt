@@ -26,6 +26,8 @@ class CharactersFragment : Fragment(R.layout.fragment_characters) {
             R.drawable.characters_line_devider
         )
 
+        val gitCheck = "gitCheck"
+
         val adapter = CharactersAdapter { character ->
             val action = CharactersFragmentDirections
                 .actionCharactersFragmentToCharacterDetailsFragment(
